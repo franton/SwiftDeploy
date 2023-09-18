@@ -13,7 +13,9 @@ The principle difference between the two projects is that I worked out a way to 
 
 ## Can I see this in action?
 
-Video coming soon.
+Sure! Phone camera is a bit shaky but you get the idea.
+
+https://github.com/franton/SwiftDeploy/assets/5807892/216a8fc7-3109-4619-9634-655d51597600
 
 ## What sourcery is this?
 
