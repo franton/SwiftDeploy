@@ -17,7 +17,7 @@ Sure! Phone camera is a bit shaky but you get the idea.
 
 https://github.com/franton/SwiftDeploy/assets/5807892/216a8fc7-3109-4619-9634-655d51597600
 
-## What sourcery is this?
+## What sorcery is this?
 
 Blog post coming soon that will go into details.
 
