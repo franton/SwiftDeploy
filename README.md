@@ -15,7 +15,16 @@ The principle difference between the two projects is that I worked out a way to 
 
 Sure! Phone camera is a bit shaky but you get the idea.
 
-https://github.com/franton/SwiftDeploy/assets/5807892/216a8fc7-3109-4619-9634-655d51597600
+https://github.com/franton/SwiftDeploy/assets/5807892/f8382ff2-e7f8-43b4-9d73-0e767a8cfe5f
+
+This shows a very sped up deployment process, where the script initiated the following process:
+
+- Work out the name of the user that signed in and upload that to Jamf Pro.
+- Auto set the name of the computer based on the asset management system data.
+- Execute a ```jamf policy -event deploy -verbose``` command.
+- Then execute a ```jamf policy -verbose``` command to run check in.
+- Re-enables Jamf automatic check in.
+- Cleans up and exits.
 
 ## What sorcery is this?
 
