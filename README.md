@@ -11,6 +11,10 @@ I like Setup Your Mac as a concept, but unfortunately I have requirements for a 
 
 The principle difference between the two projects is that I worked out a way to autogenerate the policy lists in SwiftDialog directly from the output of the Jamf binary instead of hard coding everything. So at the expense of code complexity, this system will auto generate and display the correct list every time.
 
+## Can I see this in action?
+
+Video coming soon.
+
 ## What sourcery is this?
 
 Blog post coming soon that will go into details.
