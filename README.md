@@ -7,13 +7,13 @@ To those projects and authors, I give my thanks.
 
 ## What does this do?
 
-I like Setup Your Mac as a concept, but unfortunately I have requirements for a more complex and flexible system. As a result, SwiftDeploy now exists.
+I like [Setup Your Mac](https://snelson.us/sym) as a concept, but unfortunately I have requirements for a more complex and flexible system. As a result, SwiftDeploy now exists.
 
 The principle difference between the two projects is that I worked out a way to autogenerate the policy lists in SwiftDialog directly from the output of the Jamf binary instead of hard coding everything. So at the expense of code complexity, this system will auto generate and display the correct list every time.
 
 ## Can I see this in action?
 
-Sure! Phone camera is a bit shaky but you get the idea.
+Sure!
 
 https://github.com/franton/SwiftDeploy/assets/5807892/f8382ff2-e7f8-43b4-9d73-0e767a8cfe5f
 
@@ -25,6 +25,8 @@ This shows a very sped up deployment process, where the script initiated the fol
 - Then execute a ```jamf policy -verbose``` command to run check in.
 - Re-enables Jamf automatic check in.
 - Cleans up and exits.
+
+For those who remember my JNUC 2022 talk, I am still claiming the prize for fastest Touch ID setup ever :D
 
 ## What sorcery is this?
 
@@ -43,6 +45,10 @@ TL;DR: An asynchronous pipe is set up between the Jamf binary and the script. We
 - Package, codesign and add to your Jamf Pro prestage.
 - TEST!
 
+Here's a screenshot from my packaging project so you can see where all the files are located.
+
+<img width="976" alt="swiftdeploypkg" src="https://github.com/franton/SwiftDeploy/assets/5807892/74ef209a-4fb3-4267-8aea-1339f47ed02e">
+
 ## Icon file example.
 
 A policy with a name such as
@@ -51,6 +57,8 @@ is translated to
 ```beyondtrustsupportclient.png```
 
 The code chops off the first word, amalgamates the other text, forces lower case and assumes .png format.
+
+All files I generated using [SAP's macOS icon generator](https://github.com/SAP/macOS-icon-generator) at 512x512 png.
 
 By default ALL icon files live in /usr/local/corp/deployimgs but that can be customised. See section below.
 
