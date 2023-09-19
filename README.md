@@ -80,3 +80,15 @@ By default ALL icon files live in /usr/local/corp/deployimgs but that can be cus
 - L30: URL of your Jamf Pro server. This runs before any auto detection is possible.
 - L31: Your corporate domain. Used for working out email address from current user.
 - L468: Regex for automated device naming checks. Currently set to a dummy of 8 numbers only.
+
+## Acknowledgements
+
+[Mac Admins Slack](https://www.macadmins.org/)
+- @dan-snelson For his Setup Your Mac project showing it was all possible
+- @bartreardon For his SwiftDialog project that really made the display possible
+- @pico For advise on some of the nastier bits of shell pipe handling. (Although neither of us had gone quite this far!)
+- The current users of the #zsh , #bash and #swiftdialog channels. (Hi to #jamfnation too!)
+- The original authors of cocoaDialog for putting the idea of named async pipes in my head from their original documentation
+- @tlark @macmule @rabbitt @bradtchapman @rquiqley @marcusransom and other for support and chats during the development of this.
+
+If i've missed you out, get in touch and i'll fix that mistake.
