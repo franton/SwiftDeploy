@@ -43,6 +43,7 @@ TL;DR: An asynchronous pipe is set up between the Jamf binary and the script. We
 - Add your corporate banner file to the package. (635 × 133 pixel png file is best)
 - Add ALL the icon files you're going to require. (We autogenerate the names for those from the policy names.)
 - Package, codesign and add to your Jamf Pro prestage.
+- Create a policy in Jamf with the custom trigger "isjssup", Ongoing that simply runs ```echo "up"``` .
 - TEST!
 
 Here's a screenshot from my packaging project so you can see where all the files are located.
