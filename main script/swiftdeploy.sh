@@ -293,10 +293,6 @@ logme "Loading caffeinate so the computer doesn't sleep."
 # Loop and wait for enrollment to complete
 [ -f /Library/LaunchDaemons/com.jamf.management.enroll.plist ] && while [ $( /bin/launchctl list | /usr/bin/grep -c "com.jamf.management.enroll" ) != "0" ]; do : ; done
 
-# Attempt to check if device has properly enrolled into Jamf Pro
-logme "Checking if Jamf Enrollment has completed properly"
-jsstest=$( /usr/local/bin/jamf policy -event isjssup 2>/dev/null | /usr/bin/grep -c "Script result: up" )
-
 # Enable localadmin SSH access
 logme "Enabling SSH access for admin account."
 /usr/sbin/systemsetup -f -setremotelogin off 2>&1 >/dev/null
@@ -319,6 +315,10 @@ do
 	fi
 done
 logme "Dock process running. Starting deployment process."
+
+# Attempt to check if device has properly enrolled into Jamf Pro
+logme "Checking if Jamf Enrollment has completed properly"
+jsstest=$( /usr/local/bin/jamf policy -event isjssup 2>/dev/null | /usr/bin/grep -c "Script result: up" )
 
 # Initiate re-enrollment of computer if the earlier test failed
 if [ "$jsstest" = "0" ];
