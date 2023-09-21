@@ -36,7 +36,9 @@ TL;DR:
 
 A pipe is set up between the Jamf binary and this script, and we force this to operate in an asychronous mode. The risk otherwise is the pipe could stall and the binary could be prematurely terminated. We invoke the binary using the verbose switch to get extra output.
 
-A script loop, coded to be as fast as possible processes the output received from the pipe and updates SwiftDialog accordingly. From all the verbose output we get all the policy names that the binary is to act on. Those names are processed into image files names so we can use appropriately named files. We also get start info, is a policy running a pkg or a script, did it work or did it fail and update accordingly. We also know when we're finished because otherwise async pipes don't terminate.
+A script loop, coded to be as fast as possible processes the output received from the pipe and updates SwiftDialog accordingly
+
+From all the verbose output we get all the policy names that the binary is to act on. Those names are processed into image files names so we can use appropriately named files. We also get start info, is a policy running a pkg or a script, did it work or did it fail and update accordingly. We also know when we're finished because otherwise async pipes don't terminate.
 
 The blog post will have more detail. [Eventually.](https://developer.valvesoftware.com/wiki/Valve_Time). 
 
