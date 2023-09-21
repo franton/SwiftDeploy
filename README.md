@@ -72,6 +72,8 @@ By default ALL icon files live in /usr/local/corp/deployimgs but that can be cus
   | Read Buildings |
   | Read Computers |
   | Read Departments |
+  | Read Computer Check-In |
+  | Send Computer Remote Command to Install Package |
 
 - L20: Log file location.
 - L21: Path to working folder. Change this to suit your own needs.
@@ -80,6 +82,7 @@ By default ALL icon files live in /usr/local/corp/deployimgs but that can be cus
 - L28: Hardcoded URL for Jamf Pro because device wont have enrolled at this stage
 - L30: URL of your Jamf Pro server. This runs before any auto detection is possible.
 - L31: Your corporate domain. Used for working out email address from current user.
+- L319: Detection code to see if enrollment failed and initiate re-enrollment if so. Uses same client id/secret.
 - L468: Regex for automated device naming checks. Currently set to a dummy of 8 numbers only.
 
 ## Acknowledgements
