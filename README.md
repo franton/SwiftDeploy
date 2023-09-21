@@ -83,6 +83,7 @@ By default ALL icon files live in /usr/local/corp/deployimgs but that can be cus
 - L30: URL of your Jamf Pro server. This runs before any auto detection is possible.
 - L31: Your corporate domain. Used for working out email address from current user.
 - L319: Detection code to see if enrollment failed and initiate re-enrollment if so. Uses same client id/secret.
+- L446: Custom code to run named triggers for adding user details to device record and device naming. (Not provided in this project.)
 - L468: Regex for automated device naming checks. Currently set to a dummy of 8 numbers only.
 
 ## Acknowledgements
