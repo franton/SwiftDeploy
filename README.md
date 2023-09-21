@@ -32,7 +32,13 @@ For those who remember my JNUC 2022 talk, I am still claiming the prize for fast
 
 Blog post coming soon that will go into details.
 
-TL;DR: An asynchronous pipe is set up between the Jamf binary and the script. We literally read out and parse the entire verbose output of the Jamf binary to do this. Async because other methods make the binary stall and quit. This method because the information we require does not exist in any other place aka Jamf Log, standard output etc. We also auto generate icon file names from the policy names.
+TL;DR:
+
+A pipe is set up between the Jamf binary and this script, and we force this to operate in an asychronous mode. The risk otherwise is the pipe could stall and the binary could be prematurely terminated. We invoke the binary using the verbose switch to get extra output.
+
+A script loop, coded to be as fast as possible processes the output received from the pipe and updates SwiftDialog accordingly. From all the verbose output we get all the policy names that the binary is to act on. Those names are processed into image files names so we can use appropriately named files. We also get start info, is a policy running a pkg or a script, did it work or did it fail and update accordingly. We also know when we're finished because otherwise async pipes don't terminate.
+
+The blog post will have more detail. [Eventually.](https://developer.valvesoftware.com/wiki/Valve_Time). 
 
 ## How do I use this?
 
@@ -94,6 +100,6 @@ By default ALL icon files live in /usr/local/corp/deployimgs but that can be cus
 - @pico For advise on some of the nastier bits of shell pipe handling. (Although neither of us had gone quite this far!)
 - The current users of the #zsh , #bash and #swiftdialog channels. (Hi to #jamfnation too!)
 - The original authors of cocoaDialog for putting the idea of named async pipes in my head from their original documentation
-- @tlark @macmule @rabbitt @bradtchapman @rquiqley @marcusransom and other for support and chats during the development of this.
+- @tlark @macmule @rabbitt @bradtchapman @rquigley @marcusransom and other for support and chats during the development of this.
 
 If i've missed you out, get in touch and i'll fix that mistake.
