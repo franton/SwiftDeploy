@@ -10,7 +10,7 @@
 #exec > $logfile 2>&1
 
 # Set up global variables here. User variables to be set up after login.
-scriptversion="1.10 - 17th September 2023"
+scriptversion="1.10 - 20th September 2023"
 
 clientid=""
 clientsecret=""
@@ -457,7 +457,7 @@ updatestatus "listitem: title: Update Jamf User Details, statustext: Configuring
 /usr/bin/defaults write "$userpref" DisplayName -string "$useremail"
 /usr/sbin/chown ${currentuser}:staff "$userpref"
 /usr/local/bin/jamf policy -event getusername
-updatestatus 'infobox: TRR Device Info\\n\\n**Username:** \\n- '"$currentuser"'\\n\\n**Computer Name:** \\n- Pending\\n\\n**Department**\\n- Pending\\n\\n**Location**\\n- Pending'
+updatestatus 'infobox: Device Info\\n\\n**Username:** \\n- '"$currentuser"'\\n\\n**Computer Name:** \\n- Pending\\n\\n**Department**\\n- Pending\\n\\n**Location**\\n- Pending'
 updatestatus "listitem: title: Update Jamf User Details, statustext: Completed, status: success"
 
 #
@@ -508,9 +508,9 @@ department=$( /usr/bin/plutil -extract name raw -o - - <<< "$departmentjson" 2>/
 # Finally we have names. Or do we? Fail out if not. Report if we do.
 if [ ! -z "$building" ] && [ ! -z "$department" ];
 then
-	updatestatus 'infobox: TRR Device Info\\n\\n**Username:** \\n- '"$currentuser"'\\n\\n**Computer Name:** \\n- '"$computername"'\\n\\n**Department**\\n- '"$department"'\\n\\n**Location**\\n- '"$building"''
+	updatestatus 'infobox: Device Info\\n\\n**Username:** \\n- '"$currentuser"'\\n\\n**Computer Name:** \\n- '"$computername"'\\n\\n**Department**\\n- '"$department"'\\n\\n**Location**\\n- '"$building"''
 else
-	updatestatus 'infobox: TRR Device Info\\n\\n**Username:** \\n- '"$currentuser"'\\n\\n**Computer Name:** \\n- '"$computername"'\\n\\n**Department**\\n- Retrieval FAILED\\n\\n**Location**\\n- Contact I.T.'
+	updatestatus 'infobox: Device Info\\n\\n**Username:** \\n- '"$currentuser"'\\n\\n**Computer Name:** \\n- '"$computername"'\\n\\n**Department**\\n- Retrieval FAILED\\n\\n**Location**\\n- Contact I.T.'
 fi
 
 # Invalidate the requested API token
