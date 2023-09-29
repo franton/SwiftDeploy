@@ -19,16 +19,16 @@ chmod -R 755 /usr/local/corp
 # Download swiftDialog for our use if it's not already present
 if [ ! -e "/Library/Application Support/Dialog/Dialog.app" ];
 then
-	for i in {1..5};
-	do
-		echo "Finding swiftDialog latest URL. Attempt $i of 5."
-		sdurl=$( /usr/bin/curl -s "https://api.github.com/repos/swiftDialog/swiftDialog/releases/latest" | /usr/bin/awk -F '"' "/browser_download_url/ && /pkg\"/ { print \$4; exit }" )
-		[[ "$sdurl" =~ ^https?:\/\/(.*) ]] && break
-		sleep 0.2
-	done
+	#for i in {1..5};
+	#do
+	#	echo "Finding swiftDialog latest URL. Attempt $i of 5."
+	#	sdurl=$( /usr/bin/curl -s "https://api.github.com/repos/swiftDialog/swiftDialog/releases/latest" | /usr/bin/awk -F '"' "/browser_download_url/ && /pkg\"/ { print \$4; exit }" )
+	#	[[ "$sdurl" =~ ^https?:\/\/(.*) ]] && break
+	#	sleep 0.2
+	#done
 
 	# In case things move or the autodetect fails, you can just hardcode a path to the installer here
-	#sdurl="https://github.com/bartreardon/swiftDialog/releases/download/v2.2/dialog-2.2.0-4535.pkg"
+	sdurl="https://github.com/bartreardon/swiftDialog/releases/download/v2.2/dialog-2.2.0-4535.pkg"
 
 	[ "$i" -ge 5 ] && { echo "URL detection failed."; exit 1; }
 
