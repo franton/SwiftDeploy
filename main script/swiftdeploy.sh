@@ -10,7 +10,7 @@
 #exec > $logfile 2>&1
 
 # Set up global variables here. User variables to be set up after login.
-scriptversion="1.10 - 20th September 2023"
+scriptversion="1.11 - 8th January 2024"
 
 clientid=""
 clientsecret=""
@@ -436,7 +436,7 @@ opts+=(${(f)}"--commandfile \"$sdcontrolfile\"")
 eval "$sd" "${opts[*]}" &
 
 # Wait and clear the options array
-sleep 0.1
+sleep 0.3
 unset opts
 
 #
