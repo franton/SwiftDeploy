@@ -4,7 +4,7 @@
 # Very much based on the work of Dan Snelson and Bart Reardon
 # Author - richard@richard-purves.com
 
-# Version 1.0 - 04-14-2023
+# Version 1.1 - 01-08-2024
 
 # Variables here
 dialogteamid="PWA5E9TQ59"
