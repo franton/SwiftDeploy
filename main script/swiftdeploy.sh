@@ -10,7 +10,7 @@
 #exec > $logfile 2>&1
 
 # Set up global variables here. User variables to be set up after login.
-scriptversion="1.11 - 8th January 2024"
+scriptversion="1.13 - 25th January 2024"
 
 clientid=""
 clientsecret=""
