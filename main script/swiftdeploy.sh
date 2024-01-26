@@ -291,7 +291,11 @@ logme "Loading caffeinate so the computer doesn't sleep."
 /usr/bin/caffeinate -dimu -w $$ &
 
 # Loop and wait for enrollment to complete
-[ -f /Library/LaunchDaemons/com.jamf.management.enroll.plist ] && while [ $( /bin/launchctl list | /usr/bin/grep -c "com.jamf.management.enroll" ) != "0" ]; do : ; done
+while [ -f /Library/LaunchDaemons/com.jamf.management.enroll.plist ]; do : ; done
+
+# Ensure checkin is disabled
+while [ ! -f "$ld" ]; do : ; done
+/bin/launchctl bootout system "$ld"
 
 # Enable localadmin SSH access
 logme "Enabling SSH access for admin account."
@@ -436,7 +440,7 @@ opts+=(${(f)}"--commandfile \"$sdcontrolfile\"")
 eval "$sd" "${opts[*]}" &
 
 # Wait and clear the options array
-sleep 0.3
+sleep 1
 unset opts
 
 #
@@ -445,9 +449,9 @@ unset opts
 
 # Set up the first two list items by hand
 updatestatus "list: show"
+sleep 1
 updatestatus "listitem: add, title: Update Jamf User Details, icon: ${icons}/jamfuserdetails.png, statustext: Waiting, status pending"
 updatestatus "listitem: add, title: Set Computer Name, icon: ${icons}/setcomputername.png, statustext: Waiting, status: pending"
-sleep 1
 
 ## HORRIBLE workaround for Jamf Connect bug
 logme "Writing username: $useremail to Jamf Connect plist"
